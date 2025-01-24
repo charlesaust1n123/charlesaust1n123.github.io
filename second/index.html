@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>GTM Practice Site 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        button, select {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        button:hover, select:hover {
+            background-color: #2980b9;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"], select, input[type="checkbox"] {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .product button {
+            background-color: #2ecc71;
+        }
+
+        .product button:hover {
+            background-color: #27ae60;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GTM Practice Site 2</h1>
+
+        <!-- Dropdown Menu Test -->
+        <div class="section">
+            <h2>Test Dropdown Menu</h2>
+            <p>Select an option from the dropdown to trigger an event:</p>
+            <select id="dropdownMenu" onchange="alert('Dropdown changed to: ' + this.value)">
+                <option value="" disabled selected>Select an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+
+        <!-- Checkbox Form Test -->
+        <div class="section">
+            <h2>Test Checkbox Form</h2>
+            <p>Select your preferences:</p>
+            <form id="checkboxForm" onsubmit="event.preventDefault(); alert('Preferences submitted!')">
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="Option A"> Option A</label>
+                    <label><input type="checkbox" value="Option B"> Option B</label>
+                    <label><input type="checkbox" value="Option C"> Option C</label>
+                </div>
+                <button type="submit" class="submit-btn">Submit Preferences</button>
+            </form>
+        </div>
+
+        <!-- Product Purchase Simulation -->
+        <div class="section">
+            <h2>Test Product Purchase</h2>
+            <p>Click the buttons to simulate product purchases:</p>
+            <div class="product">
+                <span>Product 1 - $10</span>
+                <button onclick="alert('Product 1 purchased!')">Buy Now</button>
+            </div>
+            <div class="product">
+                <span>Product 2 - $20</span>
+                <button onclick="alert('Product 2 purchased!')">Buy Now</button>
+            </div>
+            <div class="product">
+                <span>Product 3 - $30</span>
+                <button onclick="alert('Product 3 purchased!')">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
